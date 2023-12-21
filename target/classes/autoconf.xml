@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd" >
+
+        <!--             byName example         -->
+        <!--   Note: Name of at least one bean for Address must be same as reference name for successful injection -->
+<!--    <bean name="address" class="org.NextInn.autowire.Address"  p:street="Saura" p:city="Pupri"  />-->
+<!--    <bean name="address2" class="org.NextInn.autowire.Address"  p:street="Mehsaul" p:city="Sitamarhi"  />-->
+<!--    <bean id="emp1" class="org.NextInn.autowire.Emp"  autowire="byName"  />-->
+
+        <!--             byType example         -->
+        <!--        Note: Only one bean should be declared for Address otherwise you will get ambiguity error. -->
+<!--        <bean name="address3" class="org.NextInn.autowire.Address"  p:street="E-city" p:city="Bangalore"  />-->
+<!--        <bean id="emp1" class="org.NextInn.autowire.Emp"  autowire="byType"  />-->
+
+
+        <!--             constructor example         -->
+    <!--        Note: Only one bean should be declared for Address otherwise you will get ambiguity error. -->
+        <bean id="address" class="org.NextInn.autowire.Address"  p:street="D Park" p:city="Rohtak"  />
+        <bean id="emp1" class="org.NextInn.autowire.Emp"  autowire="constructor"  />
+
+
+</beans>

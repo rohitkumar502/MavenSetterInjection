@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans 	 xmlns="http://www.springframework.org/schema/beans"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xmlns:context="http://www.springframework.org/schema/context"
+		 xmlns:p="http://www.springframework.org/schema/p"
+		 xmlns:c="http://www.springframework.org/schema/c"
+		 xsi:schemaLocation="http://www.springframework.org/schema/beans
+		 http://www.springframework.org/schema/beans/spring-beans.xsd
+		 http://www.springframework.org/schema/context
+		 http://www.springframework.org/schema/context/spring-context.xsd" >
+
+	<bean id="echo1"  class= "org.NextInn.CIWithCollection.Echo" >
+		<constructor-arg name="cars" >
+			<list>
+				<value>Lamborghini</value>
+				<value>Ferrari</value>
+				<value>BMW</value>
+				<null />
+<!--			<value>a list element followed by a reference</value>-->
+<!--			<ref bean="myDataSource" />-->
+			</list>
+		</constructor-arg>
+		<constructor-arg name="fruits" >
+			<set>
+				<value>Mango</value>
+				<value>Apple</value>
+				<value>Banana</value>
+				<value>Apple</value>
+				<null />
+<!--			<ref bean="myDataSource" />-->
+			</set>
+		</constructor-arg>
+		<constructor-arg name="bikes" >
+			<map>
+				<entry key="Kawasaki" value="Ninja" />
+				<entry key="Yamaha" value="R15" />
+				<entry key="Ducati" value="Panigale" />
+<!--			<entry key ="a ref" value-ref="myDataSource"/>-->
+			</map>
+		</constructor-arg>
+		<constructor-arg  name="props">
+			<props>
+				<prop key="Name">Rohit Kumar</prop>
+				<prop key="College">UIETT</prop>
+				<prop key="Roll">502</prop>
+			</props>
+		</constructor-arg>
+	</bean>
+
+<!--	<bean id="echo2"  class= "org.NextInn.CIWithCollection.Echo" >-->
+<!--		<constructor-arg name="cars" value="Lamborghini, Ferrari, BMW "  />-->
+
+<!--		<constructor-arg name="fruits" value="Mango, Apple, Banana, Apple" />-->
+
+<!--		<constructor-arg name="bikes" value="Kawasaki:Ninja, Yamaha:R15, Ducati:Panigale" />-->
+
+<!--		<constructor-arg  name="props" value="Name:Rohit Kumar, Age:24, Status:Single"  />-->
+<!--	</bean>-->
+ 	
+ 	<bean id="echo3"  class= "org.NextInn.CIWithCollection.Echo"
+			  c:_0="#{ {'Lamborghini', 'Ferrari', 'BMW', null} }"
+			  c:_1="#{ {'Mango', 'Apple', 'Banana', 'Banana', null} }"
+		      c:_2="#{ {'Kawasaki': 'Ninja', 'Yamaha': 'R15', 'Ducati':'Panigale' } }"
+			  c:_3="#{ {'Name':'Rohit Kumar', 'College':'MDU', 'Roll':502} }" />
+
+
+</beans>

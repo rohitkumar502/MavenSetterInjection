@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!-- **New way** | Specifying bean properties by using the spring "c" namespace -->
+    <bean name="addrBean" class="org.NextInn.gfg.Address"
+          c:city="Bihar" c:zipcode="843333" />
+
+    <bean name="employeeBean" class="org.NextInn.gfg.Employee"
+          c:_0="Rohit Kumar" c:_1="5678" c:_2-ref="addrBean" />
+
+</beans>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+ http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <bean class="org.NextInn.CI.Certification" name="certi1" >
+        <constructor-arg value="AI-900" />
+        <constructor-arg value="4500" />
+    </bean>
+
+    <bean class="org.NextInn.CI.Student" name="student1" >
+        <constructor-arg value="Nancy Momo" />
+        <constructor-arg value="510" />
+        <constructor-arg ref="certi1" />
+<!--        Method 1 to provide list value-->
+<!--        <constructor-arg >-->
+<!--            <list>-->
+<!--                <value>Python</value>-->
+<!--                <value>Django</value>-->
+<!--                <value>Flask</value>-->
+<!--            </list>-->
+<!--        </constructor-arg>-->
+
+        <!--  Method 2 to provide list value-->
+        <constructor-arg value="Html, CSS, JavaScript" />
+
+    </bean>
+
+
+    <bean id="certi2" class="org.NextInn.CI.Certification" c:certificationName="AWS" c:price="8000"   />
+
+<!--    <bean id="student2" class="org.NextInn.CI.Student"  c:name="Monika Rajput"  c:studentId="503" -->
+<!--          c:certification-ref="certi2" c:list="Java, Spring, Hibernate"  />-->
+    <!--    This format would not work in some cases in the Intellij -->
+
+   <bean id="student2" class="org.NextInn.CI.Student"   c:_0="Monika Rajput"  c:_1="503"
+        c:_2-ref="certi2" c:_3="Java, Spring, Hibernate"  />
+    <!--    This format will work always in any IDE-->
+
+</beans>
+
+
+
